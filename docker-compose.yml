@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  verifier:
+    image: martinma28/keylime:0.0
+    command: sleep infinity
+    privileged: true
+    networks:
+      keylime_net:
+        ipv4_address: 172.16.192.10
+
+  registrar:
+    image: martinma28/keylime:0.0
+    command: sleep infinity
+    privileged: true
+    depends_on:
+      - verifier
+    networks:
+      keylime_net:
+        ipv4_address: 172.16.192.20
+
+  agent1:
+    image: martinma28/keylime:0.0
+    command: sleep infinity
+    privileged: true
+    depends_on:
+      - verifier
+      - registrar
+    networks:
+      keylime_net:
+        ipv4_address: 172.16.192.30
+
+  agent2:
+    image: martinma28/keylime:0.0
+    command: sleep infinity
+    privileged: true
+    depends_on:
+      - verifier
+      - registrar
+    networks:
+      keylime_net:
+        ipv4_address: 172.16.192.40
+
+networks:
+  keylime_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: '172.16.192.0/18'
