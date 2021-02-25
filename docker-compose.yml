@@ -2,7 +2,7 @@ version: '3'
 
 services:
   verifier:
-    image: martinma28/keylime:0.0
+    image: martinma28/keylime:0.2
     command: sleep infinity
     privileged: true
     networks:
@@ -10,7 +10,7 @@ services:
         ipv4_address: 172.16.192.10
 
   registrar:
-    image: martinma28/keylime:0.0
+    image: martinma28/keylime:0.2
     command: sleep infinity
     privileged: true
     depends_on:
@@ -20,7 +20,7 @@ services:
         ipv4_address: 172.16.192.20
 
   agent1:
-    image: martinma28/keylime:0.0
+    image: martinma28/keylime:0.2
     command: sleep infinity
     privileged: true
     depends_on:
@@ -31,7 +31,7 @@ services:
         ipv4_address: 172.16.192.30
 
   agent2:
-    image: martinma28/keylime:0.0
+    image: martinma28/keylime:0.2
     command: sleep infinity
     privileged: true
     depends_on:
