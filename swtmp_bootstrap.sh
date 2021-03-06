@@ -1,0 +1,1 @@
+swtpm socket --tpmstate dir=/tmp/mytpm2/ --ctrl type=tcp,port=2321,bindaddr=0.0.0.0 --log level=20 --tpm2 --server type=tcp,port=2322,bindaddr=0.0.0.0
