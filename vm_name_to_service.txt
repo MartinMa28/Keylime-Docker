@@ -1,2 +1,3 @@
-Fedora-31-Keylime   keylime_agent & tpm_server
-Fedora-31-Keylime-1 keylime_verifier & keylime_registrar & keylime_webapp
+Fedora-31-Keylime           keylime_agent (first agent) & tpm_server
+Fedora-31-Keylime-1         keylime_verifier & keylime_registrar & keylime_webapp
+Fedora-31-Keylime-agent-2   keylime_agent (second agent) & tpm_server
