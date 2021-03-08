@@ -5,7 +5,7 @@ apt-get upgrade
 
 # install keylime v6.0.1
 apt-get install -y wget gcc make vim python3-pip
-apt-get install -y build-essential libssl-dev swig python3-dev libtss2-dev
+apt-get install -y build-essential libssl-dev swig python3-dev
 cd /root
 wget https://github.com/keylime/keylime/archive/6.0.1.tar.gz
 tar -zxvf 6.0.1.tar.gz
@@ -93,4 +93,3 @@ apt-get install -y libglib2.0-dev
             --datarootdir=/usr/share
 make -j$(nproc)
 make install
-
