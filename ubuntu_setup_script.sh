@@ -61,14 +61,13 @@ apt-get -y install \
 
 # install tpm2-tss
 cd /root
-wget https://github.com/tpm2-software/tpm2-tss/releases/download/2.4.5/tpm2-tss-2.4.5.tar.gz
-tar -zxvf tpm2-tss-2.4.5.tar.gz
-cd tpm2-tss-2.4.5
+wget https://github.com/tpm2-software/tpm2-tss/releases/download/3.0.3/tpm2-tss-3.0.3.tar.gz
+tar -zxvf tpm2-tss-3.0.3.tar.gz
+cd tpm2-tss-3.0.3
 useradd --system --user-group tss
 ./configure --prefix=/usr
 make -j$(nproc)
 make install
-ldconfig
 
 # install tpm2-tools
 cd /root
@@ -92,11 +91,10 @@ apt-get install -y libglib2.0-dev
             --datarootdir=/usr/share
 make -j$(nproc)
 make install
-ldconfig
-pkill -HUP dbus-daemon
 
-# modify the tpm2-abrmd.service
-# ===============================
-# vim ...
-# ===============================
-systemctl daemon-reload
+# fix bugs to run webapp
+cd /root/keylime-6.0.1/keylime
+cp -r ./static /usr/local/lib/python3.8/dist-packages/keylime
+
+# https://github.com/keylime/keylime/issues/519#issuecomment-778323883
+# make the code change in the link
