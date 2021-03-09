@@ -10,6 +10,7 @@ cd /root
 wget https://github.com/keylime/keylime/archive/6.0.1.tar.gz
 tar -zxvf 6.0.1.tar.gz
 cd keylime-6.0.1
+python3 -m pip install -U pip
 pip3 install M2Crypto
 ./installer.sh -s -m
 
@@ -93,3 +94,12 @@ apt-get install -y libglib2.0-dev
             --datarootdir=/usr/share
 make -j$(nproc)
 make install
+ldconfig
+pkill -HUP dbus-daemon
+
+# modify the tpm2-abrmd.service
+# ===============================
+# vim ...
+# ===============================
+systemctl daemon-reload
+service tpm2-abrmd start
