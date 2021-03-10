@@ -12,3 +12,9 @@ dnf install -y \
   openssl-devel \
   vim \
   iputils
+
+dnf install -y dbus \
+  dbus-daemon \
+  dbus-devel \
+  swtpm \
+  swtpm-tools
