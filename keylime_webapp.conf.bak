@@ -254,11 +254,11 @@ max_upload_size = 104857600
 #=============================================================================
 
 # The default Verifier server address and port if not specified in the command
-cloudverifier_ip = 127.0.0.1
+cloudverifier_ip = 192.168.2.172
 cloudverifier_port = 8881
 
 # The default Registrar server address and port if not specified in the command
-registrar_ip = 127.0.0.1
+registrar_ip = 192.168.3.73
 registrar_port = 8891
 
 # Tenant client TLS options.
@@ -406,7 +406,7 @@ ek_check_script=
 
 # The registrar's IP address and port used to communicate with other services
 # as well as the bind address for the registrar server.
-registrar_ip = 0.0.0.0
+registrar_ip = 192.168.3.73
 registrar_port = 8890
 registrar_tls_port = 8891
 
@@ -427,7 +427,7 @@ provider_registrar_ip = 127.0.0.1
 #
 # Set to "CV" to share the CA with the cloud verifier (which must be run first
 # once before starting the registrar so it can generate the keys).
-tls_dir = generate
+tls_dir = CV
 
 # The filename (in 'tls_dir') for the registrar's CA cert.
 ca_cert = default

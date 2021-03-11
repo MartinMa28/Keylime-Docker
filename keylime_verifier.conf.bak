@@ -129,11 +129,11 @@ ek_handle = generate
 #=============================================================================
 
 # The IP address and port of verifier server binds to
-cloudverifier_ip = 192.168.2.172
+cloudverifier_ip = 0.0.0.0
 cloudverifier_port = 8881
 
 # The address and port of registrar server that verifier communicates with
-registrar_ip = 127.0.0.1
+registrar_ip = 192.168.3.73
 registrar_port = 8891
 
 # Cloud Verifier (CV) TLS options.  This is for authenticating the CV itself,
@@ -380,7 +380,7 @@ max_retries = 10
 # might provide a signed list of EK public key hashes.  Then you could write
 # an ek_check_script that checks the signature of the allowlist and then
 # compares the hash of the given EK with the allowlist.
-require_ek_cert = True
+require_ek_cert = False
 
 # Optional script to execute to check the EK and/or EK certificate against a
 # allowlist or any other additional EK processing you want to do. Runs in
@@ -406,7 +406,7 @@ ek_check_script=
 
 # The registrar's IP address and port used to communicate with other services
 # as well as the bind address for the registrar server.
-registrar_ip = 0.0.0.0
+registrar_ip = 127.0.0.1
 registrar_port = 8890
 registrar_tls_port = 8891
 
@@ -427,7 +427,7 @@ provider_registrar_ip = 127.0.0.1
 #
 # Set to "CV" to share the CA with the cloud verifier (which must be run first
 # once before starting the registrar so it can generate the keys).
-tls_dir = generate
+tls_dir = CV
 
 # The filename (in 'tls_dir') for the registrar's CA cert.
 ca_cert = default
