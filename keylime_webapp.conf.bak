@@ -380,7 +380,7 @@ max_retries = 10
 # might provide a signed list of EK public key hashes.  Then you could write
 # an ek_check_script that checks the signature of the allowlist and then
 # compares the hash of the given EK with the allowlist.
-require_ek_cert = True
+require_ek_cert = False
 
 # Optional script to execute to check the EK and/or EK certificate against a
 # allowlist or any other additional EK processing you want to do. Runs in
