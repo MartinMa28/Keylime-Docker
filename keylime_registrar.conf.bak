@@ -406,7 +406,7 @@ ek_check_script=
 
 # The registrar's IP address and port used to communicate with other services
 # as well as the bind address for the registrar server.
-registrar_ip = 127.0.0.1
+registrar_ip = 0.0.0.0
 registrar_port = 8890
 registrar_tls_port = 8891
 
